@@ -158,14 +158,8 @@ class HomeScreen(sealedActivity: SealedLightActivity) :
                         BudgetRow("(+) Income", state.incomeTotal, state.incomeBudget, state.currency) {
                             navigateTo(screenFactory = { HistoryScreen(it, repo, state.year, state.month, EntryType.INCOME) }, resultCallback = { viewModel.reload() })
                         }
-                        BudgetRow("(-) Fixed Expenses", state.fixedTotal, state.fixedBudget, state.currency) {
-                            navigateTo(screenFactory = { HistoryScreen(it, repo, state.year, state.month, EntryType.FIXED) }, resultCallback = { viewModel.reload() })
-                        }
-                        BudgetRow("(-) Variable Expenses", state.variableTotal, state.variableBudget, state.currency) {
+                        BudgetRow("(-) Expenses", state.variableTotal, state.variableBudget, state.currency) {
                             navigateTo(screenFactory = { HistoryScreen(it, repo, state.year, state.month, EntryType.VARIABLE) }, resultCallback = { viewModel.reload() })
-                        }
-                        BudgetRow("(-) Debts", state.debtTotal, state.debtBudget, state.currency) {
-                            navigateTo(screenFactory = { HistoryScreen(it, repo, state.year, state.month, EntryType.DEBT) }, resultCallback = { viewModel.reload() })
                         }
                         Spacer(modifier = Modifier.height(1f.gridUnitsAsDp()))
                         Row(modifier = Modifier.fillMaxWidth().padding(vertical = 0.5f.gridUnitsAsDp()), horizontalArrangement = Arrangement.SpaceBetween) {

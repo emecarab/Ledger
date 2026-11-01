@@ -68,7 +68,7 @@ class AddEntryScreen(
                     modifier = Modifier.weight(1f).fillMaxWidth().padding(horizontal = 1f.gridUnitsAsDp())
                         ,
                 ) {
-                    EntryType.entries.forEach { type ->
+                    EntryType.entries.filter { it == EntryType.INCOME || it == EntryType.VARIABLE }.forEach { type ->
                         Row(
                             modifier = Modifier
                                 .fillMaxWidth()
